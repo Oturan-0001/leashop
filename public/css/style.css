@@ -1,0 +1,681 @@
+.nav{
+    background-color: rgb(174, 167, 167);
+    padding: 20px 45px;
+    position: fixed;
+    width: 100%;
+    margin-top: -7px;
+    margin-left: -8px;
+    background-color: beige;
+
+    /* ✅ ajout */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.leashop{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 300;
+    font-size: 47px;
+    text-decoration: none;
+}
+
+.inscription{
+    text-decoration: none;
+}
+
+/* ✅ conteneur boutons */
+.connexion{
+    display: flex;
+    gap: 12px;
+    margin-right: 60px; /* espace avec le bord */
+}
+
+/* ✅ style bouton général */
+.btn{
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* bouton inscription */
+.btn-outline{
+    background-color: white;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+.btn-outline:hover{
+    background-color: #f2f2f2;
+}
+
+/* bouton connexion */
+.btn-dark{
+    background-color: #333;
+    color: white;
+}
+
+.btn-dark:hover{
+    background-color: black;
+}
+
+/* bouton logout */
+.btn-danger{
+    background-color: crimson;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-danger:hover{
+    background-color: darkred;
+}
+
+/* TITRES */
+h1 {
+    font-size: 32px;
+    margin-top: 120px; /* pour éviter la navbar fixe */
+    text-align: center;
+    color: #333;
+}
+
+p {
+    text-align: center;
+    max-width: 700px;
+    margin: 10px auto;
+    color: #555;
+}
+
+/* BARRE DE RECHERCHE */
+.search-box {
+    max-width: 600px;
+    margin: 30px auto;
+    display: flex;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    outline: none;
+}
+
+.search-box button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #333;
+    color: white;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background-color: black;
+}
+
+/* GRID PRODUITS */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 40px;
+}
+
+/* CARTE PRODUIT */
+.product-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* IMAGE */
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* CONTENU */
+.product-content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+}
+
+.product-price {
+    color: #007bff;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* BOUTONS */
+.product-actions {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-detail,
+.btn-whatsapp {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-detail {
+    background-color: #333;
+    color: white;
+}
+
+.btn-detail:hover {
+    background-color: black;
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe5d;
+}
+
+/* MESSAGE VIDE */
+.empty {
+    text-align: center;
+    padding: 50px;
+    color: gray;
+}
+
+
+/* CONTENEUR GLOBAL */
+.grille-produits {
+    display: flex;
+    justify-content: center;
+    padding: 120px 20px 40px; /* espace pour navbar fixe */
+}
+
+/* CARTE PRODUIT */
+.carte {
+    background: white;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    padding: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* IMAGE */
+.carte img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* CONTENU */
+.product-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* TITRE */
+.carte h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+/* PRIX */
+.carte p:nth-of-type(1) {
+    font-size: 22px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* DESCRIPTION */
+.carte p:nth-of-type(2) {
+    margin-top: 15px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* BOUTONS */
+.actions {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* bouton général */
+.btn {
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* bouton recevoir */
+.btn-primary {
+    background-color: #333;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: black;
+}
+
+/* whatsapp */
+.btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe5d;
+}
+
+/* partager */
+.btn-share {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-share:hover {
+    background-color: #0056b3;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .carte {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* CONTENEUR */
+.form-container {
+    max-width: 500px;
+    margin: 120px auto 40px; /* espace pour navbar fixe */
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* TITRE */
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* LABEL */
+.form-container label {
+    font-weight: 500;
+    color: #444;
+}
+
+/* INPUT */
+.form-container input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* FOCUS */
+.form-container input:focus {
+    border-color: #333;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* BOUTON */
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.form-container button:hover {
+    background-color: black;
+}
+
+/* LIEN RETOUR */
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+/* CONTENEUR GLOBAL */
+.dashboard-container {
+    padding: 40px;
+}
+
+/* TITRE */
+.dashboard-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* CARTE */
+.dashboard-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+/* TOP BAR */
+.dashboard-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dashboard-top h3 {
+    font-size: 20px;
+}
+
+/* BOUTON AJOUT */
+.btn-add {
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-add:hover {
+    background-color: black;
+}
+
+/* TABLE */
+.table-container {
+    overflow-x: auto;
+}
+
+.product-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* HEAD */
+.product-table thead {
+    background-color: #f5f5f5;
+}
+
+.product-table th {
+    padding: 12px;
+    text-align: left;
+}
+
+/* ROWS */
+.product-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+/* IMAGE */
+.product-img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* DESCRIPTION */
+.desc {
+    color: #555;
+}
+
+/* PRIX */
+.price {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* ACTIONS */
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* BTN EDIT */
+.btn-edit {
+    background-color: #ffc107;
+    color: black;
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+/* BTN DELETE */
+.btn-delete {
+    background-color: crimson;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-delete:hover {
+    background-color: darkred;
+}
+
+/* HOVER ROW */
+.product-table tbody tr:hover {
+    background-color: #fafafa;
+}
+
+/* PREVIEW IMAGE */
+.image-preview {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.image-preview img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+/* BOUTON AJOUTER */
+.btn-add {
+    background: linear-gradient(135deg, #4CAF50, #2e7d32);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn-add:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* CONTAINER ACTIONS */
+.actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+/* BOUTON MODIFIER */
+.btn-edit {
+    background-color: #f0ad4e;
+    color: white;
+    padding: 7px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.btn-edit:hover {
+    background-color: #ec971f;
+    transform: scale(1.05);
+}
+
+/* BOUTON SUPPRIMER */
+.btn-delete {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.btn-delete:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* EFFET CLIQUE */
+.btn-add:active,
+.btn-edit:active,
+.btn-delete:active {
+    transform: scale(0.95);
+}
+
+/* ===== PAGE CONTAINER ===== */
+.edit-container {
+    max-width: 600px;
+    margin: 120px auto 40px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* TITRE */
+.edit-container h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* LABEL */
+.edit-container label {
+    font-weight: 500;
+    color: #444;
+}
+
+/* INPUT */
+.edit-container input[type="text"],
+.edit-container input[type="number"],
+.edit-container input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* FOCUS */
+.edit-container input:focus {
+    border-color: #333;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* IMAGE PREVIEW */
+.preview-img {
+    width: 100%;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+}
+
+/* BUTTON UPDATE */
+.btn-update {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn-update:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* BACK BUTTON */
+.btn-back {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.btn-back:hover {
+    text-decoration: underline;
+}

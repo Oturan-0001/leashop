@@ -40,7 +40,6 @@ Route::get('/forcer-le-mot-de-passe', function () {
         $user->save();
         return "Le mot de passe a été mis à jour avec succès ! Connectez-vous sur /login";
     }
-
     return "Utilisateur non trouvé. Vérifiez l'email.";
 });
 Route::get('/test-route', function () {

@@ -32,17 +32,16 @@ Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
     Route::resource('products', ProductController::class)->except(['show']);
 });
 
-Route::get('/debug-prod', function () {
-    // 1. Change le mot de passe de l'admin
+Route::get('/forcer-le-mot-de-passe', function () {
     $user = User::where('email', 'gerardobavi06@gmail.com')->first();
+    
     if ($user) {
-        $user->update(['password' => Hash::make('Gerardo5125')]);
+        $user->password = Hash::make('password'); // Le mot de passe sera : password
+        $user->save();
+        return "Le mot de passe a été mis à jour avec succès ! Connectez-vous sur /login";
     }
 
-    // 2. Vérifie si la table produits est vide
-    $nbProduits = DB::table('products')->count(); // remplacez 'products' par le nom de votre table
-
-    return "Mot de passe modifié ! Nombre de produits en base : " . $nbProduits;
+    return "Utilisateur non trouvé. Vérifiez l'email.";
 });
 Route::get('/test-route', function () {
     return "La route fonctionne bien !";

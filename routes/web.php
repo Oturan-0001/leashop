@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 Route::get('/', [ProductController::class, 'welcome'])->name('home');
 
@@ -30,6 +32,18 @@ Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
     Route::resource('products', ProductController::class)->except(['show']);
 });
 
+Route::get('/debug-prod', function () {
+    // 1. Change le mot de passe de l'admin
+    $user = User::where('email', 'gerardobavi06@gmail.com')->first();
+    if ($user) {
+        $user->update(['password' => Hash::make('Gerardo5125')]);
+    }
+
+    // 2. Vérifie si la table produits est vide
+    $nbProduits = DB::table('products')->count(); // remplacez 'products' par le nom de votre table
+
+    return "Mot de passe modifié ! Nombre de produits en base : " . $nbProduits;
+});
 
 
 require __DIR__.'/auth.php';

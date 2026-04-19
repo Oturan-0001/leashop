@@ -44,6 +44,9 @@ Route::get('/debug-prod', function () {
 
     return "Mot de passe modifié ! Nombre de produits en base : " . $nbProduits;
 });
+Route::get('/test-route', function () {
+    return "La route fonctionne bien !";
+});
 
 
 require __DIR__.'/auth.php';
